@@ -1,0 +1,12 @@
+
+
+select period, gubun, region, sum(loan_jan_amt) totl_jan
+from kor_loan_status
+where period like '2013%'
+and region in('서울','경기')
+group by GROUPING SETS(period,(gubun,region));
+
+
+--오류 보고 -
+--ORA-01157: cannot identify/lock data file 201 - see DBWR trace file
+--ORA-01110: data file 201: 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TEMP.DBF'

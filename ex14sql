@@ -1,0 +1,123 @@
+--select region                     --union--합집합 중복제외  union all--합집합 중복허용 intersect --교집합 minus --차집합
+--from kor_loan_status
+--where region='서울'
+--order by region;
+--
+--REGION    
+------------
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--
+--REGION    
+------------
+--서울
+--서울
+--서울
+--
+--14개 행이 선택되었습니다. 
+
+--select region
+--from kor_loan_status
+--where region='서울'
+--union--합집합 중복제외
+--select region
+--from kor_loan_status
+--where region='인천'
+--order by region;
+--REGION    
+------------
+--서울
+--인천
+
+
+--select region
+--from kor_loan_status
+--where region='서울'
+--union all--합집합 중복허용
+--select region
+--from kor_loan_status
+--where region='인천'
+--order by region;
+--
+--
+--REGION    
+------------
+--서울
+--인천
+--
+--
+--REGION    
+------------
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--서울
+--
+--REGION    
+------------
+--서울
+--서울
+--서울
+--인천
+--인천
+--인천
+--인천
+--인천
+--인천
+--인천
+--인천
+--
+--REGION    
+------------
+--인천
+--인천
+--인천
+--인천
+--인천
+--인천
+--
+--28개 행이 선택되었습니다. 
+
+--select region
+--from kor_loan_status
+--where region='서울'
+--intersect --교집합
+--select region
+--from kor_loan_status
+--where region='인천'
+--order by region;
+--
+--선택된 행 없음
+
+
+
+--select region
+--from kor_loan_status
+--where region='서울'
+--minus --차집합
+--select region
+--from kor_loan_status
+--where region='인천'
+--order by region;
+--
+--REGION    
+------------
+--서울
+
+
